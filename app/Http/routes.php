@@ -22,6 +22,7 @@ Route::get('about', 'Pages\AboutController@index');
 Route::get('portfolios', 'Pages\PortfoliosController@index');
 
 Route::get('contact', 'Pages\ContactController@index');
+Route::post('contact_request', 'Pages\ContactController@getContactUsForm');
 
 Route::get('services', 'Pages\HomeController@services');
 

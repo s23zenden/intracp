@@ -1,9 +1,19 @@
 
+@include font-face("icons", "/public/fonts/glyphicons-halflings-regular", $file-formats: eot svg woff2 woff)
+
+html
+  position: relative
+  min-height: 100%
+
+body
+  margin: 0px
+
 .row
-  +row
+  +row()
 
 .container
   +outer-container
+  padding-top: 20px
 
 .footer
   +clearfix
@@ -13,6 +23,8 @@
   +size(inherit)
   +span-columns(3)
 
+.main
+  padding-top: 50px
 
 .boxes
   border-top: 1px solid #000000
@@ -21,21 +33,24 @@
   +outer-container
 
 .box-span6
-    margin-top: 5px
-    +size(inherit)
-    +span-columns(6)
+  //margin-top: em(24)
+  +padding(10vh null 10vh 3em)
+  +size(inherit)
+  +span-columns(6)
 
 .box-span2
-    margin-top: 5px
-    +size(inherit)
-    +span-columns(2)
+  +padding(10vh null 10vh 3em)
+  +size(inherit)
+  +span-columns(2)
 
 .box-span3
-    margin-top: 5px
-    +size(inherit)
-    +span-columns(3)
+  +padding(10vh null 10vh null)
+  +size(inherit)
+  +span-columns(3)
 
 .box-span4
-    margin-top: 5px
-    +size(inherit)
-    +span-columns(4)
+  +padding(10vh null 10vh null)
+  +size(inherit)
+  +span-columns(4)
+
+

@@ -2,10 +2,10 @@ header.navigation
   $base-border-color: gainsboro !default
   $base-border-radius: 3px !default
   $action-color: #477DCA !default
-  $dark-gray: #333 !default
+  $dark-blue: #40526B !default
   $large-screen: em(860) !default
   $navigation-padding: 1em
-  $navigation-background: $dark-gray
+  $navigation-background: $dark-blue
   $navigation-color: transparentize(white, 0.3)
   $navigation-color-hover: white
   $navigation-height: 60px
@@ -20,10 +20,14 @@ header.navigation
   $horizontal-bar-mode: $large-screen
 
   background-color: $navigation-background
-  border-bottom: 1px solid darken($navigation-background, 10)
+  border-bottom: 1px solid darken($navigation-background, 3)
   min-height: $navigation-height
   width: 100%
   z-index: 999
+  left: 0px
+  right: 0px
+  position: fixed
+  top: 0px
 
   .navigation-wrapper 
     @include clearfix
@@ -40,8 +44,9 @@ header.navigation
 
     img 
       max-height: $navigation-height
-      padding: 0.8em 0
-  
+      //padding: 0.8em 0
+      padding: 0 0
+
 
 
   // Mobile view
@@ -106,8 +111,8 @@ header.navigation
     display: block
     line-height: $navigation-height
     overflow: hidden
-    padding-right: 0.8em
-    text-align: right
+    padding-left: 0.8em
+    text-align: left
     width: 100%
     z-index: 9999
 
