@@ -30,7 +30,10 @@
 
                 {!! Form::label('message','Message') !!}
                 {!! Form::textarea('message','') !!}
-            
+
+                {!! Form::reset('Clear', array('class' => '')) !!}
+                {!! Form::submit('Send', array('class' => '')) !!}
+
             {!!Form::close()!!}
             {{--<form>--}}
                 {{--<label>Name:</label>--}}

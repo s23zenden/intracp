@@ -25,8 +25,8 @@ class ContactController extends Controller {
         $rules = array(
             'name' => 'required|alpha',
             'email' => 'required|email',
-            'subject' => 'required|aplha',
-            'message' => 'required|min:25'
+            'subject' => 'required|alpha',
+            'message' => 'required|min:4'
         );
 
         //validate data
@@ -42,10 +42,10 @@ class ContactController extends Controller {
                $message->to('info@intracp.com','Info')->cc('s23zenden@gmail.com')->subject($data['subject']);
             });
 
-            return View::make('pages.contact');
+            return View::make('contact');
         }else{
             //return contact form with errors
-            return Redirect::to('pages.contact')->withErrors($validator);
+            return Redirect::to('contact')->withErrors($validator);
         }
     }
 }
