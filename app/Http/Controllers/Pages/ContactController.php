@@ -26,7 +26,8 @@ class ContactController extends Controller {
             'name' => 'required|alpha',
             'email' => 'required|email',
             'subject' => 'required|alpha',
-            'message' => 'required|min:4'
+            'mail' => 'required|min:4'
+//            'sendMe' => 'boolean'
         );
 
         //validate data
@@ -36,13 +37,17 @@ class ContactController extends Controller {
         if($validator->passes()){
             //send email using lavarel send function
             Mail::send('emails.email', $data, function($message) use ($data){
-               //email from field
-               $message->from($data['email'], $data['name']);
+
                //email to fields
-               $message->to('info@intracp.com','Info')->cc('s23zenden@gmail.com')->subject($data['subject']);
+               $message->to('info@intracp.com','Info')->subject($data['subject']);
+
+               //send email copy
+                if(array_only($data, 'sendMe') && $data['sendMe'] === '1'){
+                    $message->to($data['email'])->subject($data['subject']);
+                }
             });
 
-            return View::make('contact');
+            return Redirect::to('contact')->with('alert','Email sent');
         }else{
             //return contact form with errors
             return Redirect::to('contact')->withErrors($validator);

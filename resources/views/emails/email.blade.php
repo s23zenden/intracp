@@ -1,21 +1,29 @@
 <?php
-    //get the first name
-    $name = Input::get('name');
-    $email = Input::get ('email');
-    $subject = Input::get ('subject');
-    $message = Input::get ('message');
+    //get the date
     $date_time = date("F j, Y, g:i a");
-    $userIpAddress = Request::getClientIp();
 ?>
 
-<h1>We been contacted by.... </h1>
-
-<p>
-     Name: {{$name}}
-     Email address: {{$email}}
-     Subject: {{$subject}}
-     Message: {{$message}}
-     Date: {{$date_time}}
-     User IP address: {{$userIpAddress}}
-
-</p>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+</head>
+    <body>
+        <h2>Info Email</h2>
+        <div>
+            <p><strong>Name: </strong>{{ $name}}</p>
+        </div>
+        <div>
+            <p><strong>Email: </strong>{{ $email}}</p>
+        </div>
+        <div>
+            <p><strong>Subject: </strong>{{ $subject}}</p>
+        </div>
+        <div>
+            <p><strong>Date: </strong>{{ $date_time}}</p>
+        </div>
+        <div>
+            <h4>Message</h4>
+            {{ $mail}}
+        </div>
+    </body>
+</html>

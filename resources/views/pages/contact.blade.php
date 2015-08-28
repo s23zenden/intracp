@@ -14,7 +14,12 @@
 
     <div class='container'>
         <div class='box-span6'>
-            {!! Form::open(array('url' => 'contact_request')) !!}
+            @if (session('alert'))
+                <div class="flash-success">
+                    <span> {{ session('message') }}</span>
+                </div>
+            @endif
+            {!! Form::open(array('url' => 'contact')) !!}
                 @foreach($errors->all(
                     ':message'
                 ) as $message){{$message}} @endforeach
@@ -28,11 +33,15 @@
                 {!! Form::label('subject','Subject') !!}
                 {!! Form::text('subject','') !!}
 
-                {!! Form::label('message','Message') !!}
-                {!! Form::textarea('message','') !!}
+                {!! Form::label('mail','Message') !!}
+                {!! Form::textarea('mail','') !!}
 
-                {!! Form::reset('Clear', array('class' => '')) !!}
+                {!! Form::checkbox('sendMe') !!} Send me a copy
+
+                <br>
+                <br>
                 {!! Form::submit('Send', array('class' => '')) !!}
+                {!! Form::reset('Clear', array('class' => '')) !!}
 
             {!!Form::close()!!}
             {{--<form>--}}
@@ -60,4 +69,5 @@
             </div>
         </div>
     </div>
+
 @stop
