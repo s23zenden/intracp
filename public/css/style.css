@@ -624,7 +624,8 @@ header.navigation {
       height: 3em;
       margin-bottom: 2em;
       margin: auto;
-      opacity: 0.4; }
+      opacity: 0.6;
+      margin-bottom: 20px; }
     .flex-boxes .flex-box .flex-title {
       color: rgba(51, 51, 51, 0.7);
       font-size: 1.2em;
@@ -800,11 +801,10 @@ header.navigation {
   width: 100%; }
 
 .hero {
-  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"), -webkit-linear-gradient(10deg, #20392B, #7F99BE), no-repeat #7F99BE scroll;
-  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"), linear-gradient(10deg, #20392B, #7F99BE), no-repeat #7F99BE scroll;
+  background: url("/image/homepage/homepage.jpg"), -webkit-linear-gradient(10deg, #20392B, #7F99BE), no-repeat #7F99BE scroll;
+  background: url("/image/homepage/homepage.jpg"), linear-gradient(10deg, #20392B, #7F99BE), no-repeat #7F99BE scroll;
   background-color: #324766;
   background-position: top;
-  background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 3em;
   height: 40em; }
@@ -864,10 +864,10 @@ header.navigation {
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
-  padding: 0px 20px; }
+  padding: 20px 20px; }
 
 .banner {
-  background-image: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"); }
+  background-image: url("/image/banner/banner.jpg"); }
 
 article.type-system-serif {
   padding-right: 2em;
